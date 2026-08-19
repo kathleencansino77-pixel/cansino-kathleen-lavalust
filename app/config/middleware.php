@@ -44,6 +44,8 @@ require_once APP_DIR . 'middlewares/StudentMiddleware.php';
 | Used for adding middlewares
 |
 */
-$config['middlewares'] = [
-    'student' => new StudentMiddleware()
-];
+get_config([
+    'middlewares' => [
+        'student' => load_class('StudentMiddleware', 'middlewares'),
+    ],
+]);
